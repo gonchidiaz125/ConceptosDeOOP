@@ -43,6 +43,11 @@ void EjemploDeOperacionesMatematicas()
     Console.WriteLine($"Resultado ({num1} * {num2}): {resultado}");
     Console.WriteLine(multiplicador.ObtenerMensajeConResultado(num1, num2));
     Console.WriteLine("");
+
+    var divisor = new CalculadoraDeDivision();
+    resultado = divisor.Calcular(num1, num2);
+    Console.WriteLine($"Resultado({num1} / {num2}): {resultado}");
+    Console.WriteLine(divisor.ObtenerMensajeConResultado(num1, num2));
     Console.WriteLine("");
     Console.WriteLine("");
 

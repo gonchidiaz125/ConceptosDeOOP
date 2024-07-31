@@ -58,4 +58,20 @@
             return $"La {_operacion} de {numero1} * {numero2} es {resultado}";
         }
     }
+
+    public class CalculadoraDeDivision : IOperacionMatematica 
+    {
+        private readonly string _operacion = "División";
+
+        public double Calcular(double numero1, double numero2)
+        {
+            return numero1 / numero2;
+        }
+
+        public string ObtenerMensajeConResultado(double numero1, double numero2)
+        {
+            var resultado = Calcular(numero1, numero2);
+            return $" La {_operacion} de {numero1} / {numero2} es {resultado}"; 
+        }
+    }
 }
