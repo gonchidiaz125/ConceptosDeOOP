@@ -1,16 +1,20 @@
 ﻿using ConceptosDeOOP.EjemplosDeInterfaces.Logger;
 using ConceptosDeOOP.EjemplosDeInterfaces.OperacionesMatematicas;
+using ConceptosDeOOP.EjemplosDeInterfaces.FigurasGeometricas;
 
 Console.WriteLine("Hola. Este son ejemplo de OOP (Object Oriented Programing). Se incluye el uso de Interfaces, clases y herencia");
 Console.WriteLine("");
 
 
 // Ejemplos 1 y 2 con Operaciones matematicas
-EjemploDeOperacionesMatematicas();
+//EjemploDeOperacionesMatematicas();
 
 
 // Ejemplo 3 de los Logger
-EjemploDeUsoDeLogger();
+//EjemploDeUsoDeLogger();
+
+//Ejemplo 4 De las figuras geometricas 
+EjemploDeFigurasGeometricas();
 
 
 
@@ -49,7 +53,8 @@ void EjemploDeOperacionesMatematicas()
     Console.WriteLine($"Resultado({num1} / {num2}): {resultado}");
     Console.WriteLine(divisor.ObtenerMensajeConResultado(num1, num2));
     Console.WriteLine("");
-    Console.WriteLine("");
+
+    
 
 
     /*
@@ -62,10 +67,13 @@ void EjemploDeOperacionesMatematicas()
     var sumadorEjemplo2 = new CalculadoraDeSuma();
     var restaEjemplo2 = new CalculadoraDeResta();
     var multiplicadorEjemplo2 = new CalculadoraDeMultiplicacion();
+    var dividirEjemplo2 = new CalculadoraDeDivision();
 
+    
     EjecutarOperacion(num1, num2, sumadorEjemplo2);
     EjecutarOperacion(num1, num2, restaEjemplo2);
     EjecutarOperacion(num1, num2, multiplicadorEjemplo2);
+    EjecutarOperacion(num1, num2, dividirEjemplo2);
 }
 
 
@@ -123,6 +131,19 @@ void EjemploDeUsoDeLogger()
 
 }
 
+void EjemploDeFigurasGeometricas() 
+{
+    var cuadrado = new DibujandoCuadrado();
+    var resultado = cuadrado.Dibujar();
+    Console.WriteLine($"Dibujamos un {resultado}");
+    Console.WriteLine("");
+
+    Console.WriteLine("");
+    var triangulo = new DibujandoUnTriangulo();
+    resultado = triangulo.Dibujar();
+    Console.WriteLine($"Dibujamos un {resultado}");
+    Console.WriteLine("");
+}
 
 
 
