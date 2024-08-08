@@ -1,4 +1,5 @@
-﻿using ConceptosDeOOP.EjemplosDeInterfaces.Logger;
+﻿using ConceptosDeOOP.EjemplosDeInterfaces.FigurasGeometricasClasesHerencia;
+using ConceptosDeOOP.EjemplosDeInterfaces.Logger;
 using ConceptosDeOOP.EjemplosDeInterfaces.OperacionesMatematicas;
 using ConceptosDeOOP.EjemplosDeInterfaces.Vehiculos;
 
@@ -15,8 +16,11 @@ Console.WriteLine("");
 
 
 // Ejemplo 4: Clases y Herencia
-EjemploDeClaseVehiculo();
+//EjemploDeClaseVehiculo();
 
+// EJEMPLO 5: Clase y Herencia Figuras Geometricas
+
+EjemploDeClaseFigurasGeometricas();
 
 void EjemploDeOperacionesMatematicas()
 {
@@ -152,6 +156,31 @@ void EjemploDeClaseVehiculo()
         Console.WriteLine("");
     }
 
+    Console.WriteLine("");
+}
+
+void EjemploDeClaseFigurasGeometricas()
+{
+    Console.WriteLine("");
+    Console.WriteLine("Ejemplo 5 de figuras geometricas: Clase y Herencia");
+    Console.WriteLine("");
+
+    var ListaDeFigurasGeometricas = new List<FiguraGeometricaBase>();
+
+    var triangulo = new Triangulo("Triangulo", 3, 6);
+
+    ListaDeFigurasGeometricas.Add(triangulo);
+
+    foreach (var figura in ListaDeFigurasGeometricas) 
+    {
+        figura.MostrarDescripcion();
+        Console.WriteLine("");
+        Console.WriteLine($"Perímetro: {figura.CalcularPerimetro()}");
+        Console.WriteLine("");
+        Console.WriteLine($"Superficie: {figura.CalcularSuperficie()}");
+        Console.WriteLine("");
+
+    }
     Console.WriteLine("");
 }
 

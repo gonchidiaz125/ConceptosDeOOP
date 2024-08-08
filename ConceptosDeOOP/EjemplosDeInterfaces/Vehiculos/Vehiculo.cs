@@ -21,6 +21,7 @@ namespace ConceptosDeOOP.EjemplosDeInterfaces.Vehiculos
         public string Nombre { get; set; }
 
         // Constructor de la clase (es necesario definir el Fabricante y el nombre)
+        // el constructor es el metodo que se ejecuta cuando se crea un objeto de esta clase
         public Vehiculo(Fabricante fabricante, string nombre)
         {
             Fabricante = fabricante;
