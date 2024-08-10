@@ -168,8 +168,14 @@ void EjemploDeClaseFigurasGeometricas()
     var ListaDeFigurasGeometricas = new List<FiguraGeometricaBase>();
 
     var triangulo = new Triangulo("Triangulo", 3, 6);
+    var cuadrado = new Cuadrado("Cuadrado", 6);
+    var rectangulo = new Rectangulo("Rectangulo", 10, 5);
+    var circulo = new Circulo("Circulo", 10);
 
     ListaDeFigurasGeometricas.Add(triangulo);
+    ListaDeFigurasGeometricas.Add(cuadrado);
+    ListaDeFigurasGeometricas.Add(rectangulo);
+    ListaDeFigurasGeometricas.Add(circulo);
 
     foreach (var figura in ListaDeFigurasGeometricas) 
     {
