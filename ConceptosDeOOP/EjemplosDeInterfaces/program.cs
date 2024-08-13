@@ -1,10 +1,10 @@
-﻿using ConceptosDeOOP.EjemplosDeInterfaces.FigurasGeometricasClasesHerencia;
+﻿using ConceptosDeOOP.EjemplosDeGenerics.Entidades;
+using ConceptosDeOOP.EjemplosDeGenerics;
 using ConceptosDeOOP.EjemplosDeInterfaces.Logger;
 using ConceptosDeOOP.EjemplosDeInterfaces.OperacionesMatematicas;
-
 using ConceptosDeOOP.EjemplosDeInterfaces.FigurasGeometricas;
-
 using ConceptosDeOOP.EjemplosDeInterfaces.Vehiculos;
+using ConceptosDeOOP.EjemplosDeInterfaces.FigurasGeometricasClasesHerencia;
 
 
 Console.WriteLine("Hola. Este son ejemplo de OOP (Object Oriented Programing). Se incluye el uso de Interfaces, clases y herencia");
@@ -12,14 +12,15 @@ Console.WriteLine("");
 
 
 // Ejemplos 1 y 2 con Operaciones matematicas
-//EjemploDeOperacionesMatematicas();
+// EjemploDeOperacionesMatematicas();
 
 
 // Ejemplo 3 de los Logger
-//EjemploDeUsoDeLogger();
+// EjemploDeUsoDeLogger();
 
-//Ejemplo 4 De las figuras geometricas 
-EjemploDeFigurasGeometricas();
+
+// Ejemplo 4 De las figuras geometricas 
+// EjemploDeFigurasGeometricas();
 // Ejemplos 1 y 2 con Operaciones matematicas (Interfaces y clases)
 // EjemploDeOperacionesMatematicas();
 
@@ -28,13 +29,78 @@ EjemploDeFigurasGeometricas();
 // EjemploDeUsoDeLogger();
 
 
-
 // Ejemplo 4: Clases y Herencia
-//EjemploDeClaseVehiculo();
+// EjemploDeClaseVehiculo();
+// EjemploDeUsoDeLogger();
 
 // EJEMPLO 5: Clase y Herencia Figuras Geometricas
+// EjemploDeClaseFigurasGeometricas();
 
-EjemploDeClaseFigurasGeometricas();
+// Ejemplo 6: Genericos y clase abstracta
+EjemploDeGenerics();
+
+
+void EjemploDeGenerics()
+{
+    var centroDeAtencion = new CentroDeAtencion
+    {
+        Id = 1,
+        Nombre = "Centro Médico Central",
+        FechaAlta = DateTime.Now,
+        UsuarioAlta = "admin",
+        Direccion = "Calle Falsa 123",
+        Telefono = "123456789",
+        Email = "centro@ejemplo.com"
+    };
+
+    var medico = new Medico
+    {
+        Id = 2,
+        Nombre = "Dr. Juan Pérez",
+        FechaAlta = DateTime.Now,
+        UsuarioAlta = "admin",
+        Matricula = "MP123456",
+        Email = "juan.perez@ejemplo.com",
+        Telefono = "987654321",
+        TieneLinked = true,
+        LinkedInURL = "https://linkedin.com/in/juanperez"
+    };
+
+    var servicio = new Servicio
+    {
+        Id = 3,
+        Nombre = "Servicio de Radiología",
+        FechaAlta = DateTime.Now,
+        UsuarioAlta = "admin",
+        Email = "radiologia@ejemplo.com",
+        Observaciones = "Servicio de alta prioridad"
+    };
+
+    var administrador = new AdministradorDeEntidades();
+
+
+    // Mostrar detalles antes de dar de baja
+    centroDeAtencion.MostrarDetalles();
+    medico.MostrarDetalles();
+    servicio.MostrarDetalles();
+
+    Console.WriteLine("\nDando de baja las entidades...\n");
+
+    // Dar de baja las entidades
+    administrador.DarDeBaja(centroDeAtencion, "usuarioBaja");
+    administrador.DarDeBaja(medico, "usuarioBaja");
+    administrador.DarDeBaja(servicio, "usuarioBaja");
+
+
+    // Mostrar detalles después de dar de baja
+    centroDeAtencion.MostrarDetalles();
+    medico.MostrarDetalles();
+    servicio.MostrarDetalles();
+
+
+    Console.ReadLine();
+}
+
 
 void EjemploDeOperacionesMatematicas()
 {
