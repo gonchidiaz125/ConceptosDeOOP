@@ -1,18 +1,26 @@
-﻿using ConceptosDeOOP.EjemplosDeInterfaces.Logger;
+﻿using ConceptosDeOOP.EjemplosDeInterfaces.FigurasGeometricasClasesHerencia;
+using ConceptosDeOOP.EjemplosDeInterfaces.Logger;
 using ConceptosDeOOP.EjemplosDeInterfaces.OperacionesMatematicas;
+using ConceptosDeOOP.EjemplosDeInterfaces.Vehiculos;
 
 Console.WriteLine("Hola. Este son ejemplo de OOP (Object Oriented Programing). Se incluye el uso de Interfaces, clases y herencia");
 Console.WriteLine("");
 
 
-// Ejemplos 1 y 2 con Operaciones matematicas
-EjemploDeOperacionesMatematicas();
+// Ejemplos 1 y 2 con Operaciones matematicas (Interfaces y clases)
+// EjemploDeOperacionesMatematicas();
 
 
-// Ejemplo 3 de los Logger
-EjemploDeUsoDeLogger();
+// Ejemplo 3 de los Logger (Interfaces y clases)
+// EjemploDeUsoDeLogger();
 
 
+// Ejemplo 4: Clases y Herencia
+//EjemploDeClaseVehiculo();
+
+// EJEMPLO 5: Clase y Herencia Figuras Geometricas
+
+EjemploDeClaseFigurasGeometricas();
 
 void EjemploDeOperacionesMatematicas()
 {
@@ -62,7 +70,7 @@ void EjemploDeOperacionesMatematicas()
     var sumadorEjemplo2 = new CalculadoraDeSuma();
     var restaEjemplo2 = new CalculadoraDeResta();
     var multiplicadorEjemplo2 = new CalculadoraDeMultiplicacion();
-
+    
     EjecutarOperacion(num1, num2, sumadorEjemplo2);
     EjecutarOperacion(num1, num2, restaEjemplo2);
     EjecutarOperacion(num1, num2, multiplicadorEjemplo2);
@@ -124,6 +132,62 @@ void EjemploDeUsoDeLogger()
 }
 
 
+void EjemploDeClaseVehiculo()
+{
+    Console.WriteLine("");
+    Console.WriteLine("Ejemplo 4 de Vehiculos: Clases y Herencia");
+    Console.WriteLine("");
 
+    // Creo una lista de vehiculos, voy a cargar un automovil, un camion y un camión con acoplado
+    var listaDeVehiculos = new List<Vehiculo>();
+
+    var automovil = new Automovil(Fabricante.Ford, "Focus", 4);
+    var camion = new Camion(Fabricante.MercedesBenz, "Unimog", 10000);
+    var camionConAcoplado = new CamionConAcoplado(Fabricante.MercedesBenz, "1114", 12000, 12000);
+
+    listaDeVehiculos.Add(automovil);
+    listaDeVehiculos.Add(camion);
+    listaDeVehiculos.Add(camionConAcoplado);
+
+    // Aca voy a mostrar la descripción de cada vehiculo, que va a ser diferente según la clase de vehículo de la que se trate
+    foreach (var vehiculo in listaDeVehiculos)
+    {
+        vehiculo.MostrarDescripcion();
+        Console.WriteLine("");
+    }
+
+    Console.WriteLine("");
+}
+
+void EjemploDeClaseFigurasGeometricas()
+{
+    Console.WriteLine("");
+    Console.WriteLine("Ejemplo 5 de figuras geometricas: Clase y Herencia");
+    Console.WriteLine("");
+
+    var ListaDeFigurasGeometricas = new List<FiguraGeometricaBase>();
+
+    var triangulo = new Triangulo("Triangulo", 3, 6);
+    var cuadrado = new Cuadrado("Cuadrado", 6);
+    var rectangulo = new Rectangulo("Rectangulo", 10, 5);
+    var circulo = new Circulo("Circulo", 10);
+
+    ListaDeFigurasGeometricas.Add(triangulo);
+    ListaDeFigurasGeometricas.Add(cuadrado);
+    ListaDeFigurasGeometricas.Add(rectangulo);
+    ListaDeFigurasGeometricas.Add(circulo);
+
+    foreach (var figura in ListaDeFigurasGeometricas) 
+    {
+        figura.MostrarDescripcion();
+        Console.WriteLine("");
+        Console.WriteLine($"Perímetro: {figura.CalcularPerimetro()}");
+        Console.WriteLine("");
+        Console.WriteLine($"Superficie: {figura.CalcularSuperficie()}");
+        Console.WriteLine("");
+
+    }
+    Console.WriteLine("");
+}
 
 
